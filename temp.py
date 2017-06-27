@@ -3,6 +3,8 @@ __mtime__ = '2017/6/26'
 """
 
 class Role(object):
+    sex = 'male'
+
     def __init__(self,name,weapon,life_value = 100,money = 15000):
         self.name = name
         self.weapon = weapon
@@ -23,7 +25,8 @@ class Role(object):
 
 d1 = Role('cui','ak47')
 d2 = Role('wang','B51')
-d1.shot()
-print(d1._Role__high)
-
-print(d1.high())
+d1.sex = 'female'   #修改d1的sex属性
+print(d1.sex,d2.sex,Role.sex)
+print("修改公有属性")
+Role.sex = 'god'    #修改全局的公有属性
+print(d1.sex,d2.sex,Role.sex)
